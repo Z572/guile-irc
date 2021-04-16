@@ -6,14 +6,8 @@ AC_CONFIG_AUX_DIR([build-aux])
 AM_INIT_AUTOMAKE([color-tests -Wall -Wno-portability foreign])
 AM_SILENT_RULES([yes])
 
+GUILE_PKG([3.0 2.2])
 GUILE_PROGS
-
-if $GUILE_TOOLS | grep -q compile; then
-   # everything cool
-   true
-else
-   AC_MSG_ERROR([Guile 2.0 required.])
-fi
 
 AC_ARG_ENABLE([gnutls],
      [  --enable-gnutls    Turn on gnutls],
